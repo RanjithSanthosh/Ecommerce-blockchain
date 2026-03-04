@@ -1,0 +1,316 @@
+/**
+ * Blockchain Verification Widget Styles
+ */
+
+.blockchain-status-widget {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.blockchain-status-widget .status-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.blockchain-status-widget .status-icon {
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+.blockchain-status-widget .status-title {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.blockchain-status-widget .btn-refresh-status {
+    color: #6c757d;
+    padding: 0;
+    font-size: 14px;
+}
+
+.blockchain-status-widget .btn-refresh-status:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.blockchain-status-widget .status-body {
+    margin-bottom: 15px;
+}
+
+.blockchain-status-widget .status-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.blockchain-status-widget .status-info label {
+    font-weight: 600;
+    color: #495057;
+    margin: 0;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.blockchain-status-widget .status-info code {
+    background: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #d9534f;
+    word-break: break-all;
+    flex-grow: 1;
+}
+
+.blockchain-status-widget .status-info .badge {
+    white-space: nowrap;
+}
+
+.blockchain-status-widget .status-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    border-top: 1px solid #dee2e6;
+}
+
+.blockchain-status-widget .status-actions .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    white-space: nowrap;
+}
+
+/* Verification Result Modal */
+.verification-result {
+    padding: 20px 0;
+}
+
+.verification-result .alert {
+    margin-bottom: 20px;
+}
+
+.verification-result .alert h4 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.verification-result table {
+    margin-bottom: 20px;
+}
+
+.verification-result table td {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.verification-result table td:first-child {
+    width: 200px;
+    color: #495057;
+}
+
+.verification-result table code {
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 3px;
+    word-break: break-all;
+    display: block;
+    font-size: 11px;
+}
+
+.verification-result .verification-details {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.verification-result .verification-details h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.verification-result .verification-details pre {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 11px;
+    max-height: 300px;
+    overflow: auto;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .blockchain-status-widget .status-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .blockchain-status-widget .status-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .blockchain-status-widget .status-info code {
+        margin-top: 5px;
+    }
+    
+    .blockchain-status-widget .status-actions {
+        flex-direction: column;
+    }
+    
+    .blockchain-status-widget .status-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Status Badge Colors */
+.badge-pending {
+    background-color: #FFC107 !important;
+    color: #000 !important;
+}
+
+.badge-verified {
+    background-color: #28A745 !important;
+}
+
+.badge-failed {
+    background-color: #DC3545 !important;
+}
+
+.badge-cancelled {
+    background-color: #6C757D !important;
+}
+
+/* Loading State */
+.blockchain-status-widget.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.blockchain-status-widget.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Integration with Order Details Page */
+.order-details-card {
+    margin-bottom: 20px;
+}
+
+.order-details-card .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.order-details-card .card-body {
+    padding: 15px;
+}
+
+/* Inline Verification Indicator */
+.inline-blockchain-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.inline-blockchain-status.pending {
+    background: #FFC107;
+    color: #000;
+}
+
+.inline-blockchain-status.verified {
+    background: #28A745;
+    color: white;
+}
+
+.inline-blockchain-status.failed {
+    background: #DC3545;
+    color: white;
+}
+
+.inline-blockchain-status.cancelled {
+    background: #6C757D;
+    color: white;
+}
+
+.inline-blockchain-status i {
+    font-size: 10px;
+}
+
+/* Alert Styling */
+.alert-blockchain {
+    border-left: 4px solid #007bff;
+}
+
+.alert-blockchain-success {
+    border-left-color: #28A745;
+    background-color: #d4edda;
+}
+
+.alert-blockchain-error {
+    border-left-color: #DC3545;
+    background-color: #f8d7da;
+}
+
+/* Table Improvements */
+.blockchain-history-table {
+    font-size: 13px;
+}
+
+.blockchain-history-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.blockchain-history-table td {
+    padding: 10px;
+}
+
+.blockchain-history-table code {
+    font-size: 11px;
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 2px;
+}
