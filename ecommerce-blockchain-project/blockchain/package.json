@@ -1,0 +1,20 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/hardhat/internal/cli/cli.js node",
+    "deploy": "node node_modules/hardhat/internal/cli/cli.js run scripts/deploy_store.js --network localhost",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "dotenv": "^17.3.1",
+    "ethers": "^6.13.4",
+    "hardhat": "^2.22.17"
+  }
+}
