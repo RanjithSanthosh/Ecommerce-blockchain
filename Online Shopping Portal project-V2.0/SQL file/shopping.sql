@@ -79,16 +79,19 @@ CREATE TABLE `orders` (
   `quantity` int(11) DEFAULT NULL,
   `orderDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `paymentMethod` varchar(50) DEFAULT NULL,
-  `orderStatus` varchar(55) DEFAULT NULL
+  `orderStatus` varchar(55) DEFAULT NULL,
+  `blockchain_txid` varchar(255) DEFAULT NULL,
+  `trust_status` varchar(50) DEFAULT NULL,
+  `blockchain_timestamp` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `userId`, `productId`, `quantity`, `orderDate`, `paymentMethod`, `orderStatus`) VALUES
-(1, 5, '20', 1, '2025-01-02 09:11:34', 'COD', 'Delivered'),
-(2, 4, '3', 1, '2025-01-02 09:18:17', 'Debit / Credit card', 'Delivered');
+INSERT INTO `orders` (`id`, `userId`, `productId`, `quantity`, `orderDate`, `paymentMethod`, `orderStatus`, `blockchain_txid`, `trust_status`, `blockchain_timestamp`) VALUES
+(1, 5, '20', 1, '2025-01-02 09:11:34', 'COD', 'Delivered', NULL, NULL, NULL),
+(2, 4, '3', 1, '2025-01-02 09:18:17', 'Debit / Credit card', 'Delivered', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
